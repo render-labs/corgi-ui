@@ -1,4 +1,4 @@
-<script setup>
+<script>
 import {reactive, ref, onMounted} from 'vue'
 
 import axios from 'axios'
@@ -6,13 +6,16 @@ import axios from 'axios'
 import PostsList from '../Posts/List.vue'
 
 export default {
+    components: {
+        PostsList
+    },
     setup() {
         const posts = ref([])
 
         function getPosts() {
             axios.get(`${import.meta.env.VITE_CORGI_URL}/posts`)
                 .then(res => {
-                    posts.value = res.data.posts
+                    posts.value = res.data
                 })
         }
 
@@ -23,10 +26,10 @@ export default {
         return {
             posts
         }
-    },
+    }
 }
 </script>
 
 <template>
-    <PostsList :posts="post"/>
+    <PostsList :posts="posts"/>
 </template>

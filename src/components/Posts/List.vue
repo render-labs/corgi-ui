@@ -1,21 +1,21 @@
-<script setup>
+<script>
+import {ref, watch} from 'vue'
+
 import Item from './Item.vue'
 
 export default {
     props: {
-        posts: {
-            type: Array
-        }
+        posts: Array
     },
-    setup(props) {
-
-    }
+    components: {
+        Item
+    },
 }
 </script>
 
 <template>
-    <div v-if="posts.length">
-        <Item v-for="(index, post) in posts" :key="index" :post="post" />
+    <div v-if="posts">
+        <Item v-for="(post, index) in posts" :key="index" :post="post" />
     </div>
     <div v-else>
         <p>No posts to show</p>
