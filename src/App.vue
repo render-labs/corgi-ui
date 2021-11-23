@@ -7,7 +7,9 @@
 
         <div class="flex items-center justify-end w-full">
             <router-link to="/blog" class="mx-4">Blog</router-link>
-            <!-- <router-link to="/register" class="mx-4">Register</router-link> -->
+            <router-link to="/admin" class="mx-4">Admin</router-link>
+            <router-link to="/login" class="mx-4">Login</router-link>
+            <router-link to="/register" class="mx-4">Register</router-link>
         </div>
     </div>
     
