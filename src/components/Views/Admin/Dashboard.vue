@@ -13,7 +13,7 @@ export default {
         const posts = ref([])
 
         function getPosts() {
-            axios.get(`${import.meta.env.VITE_CORGI_URL}/posts`, {withCredentials: true})
+            axios.get(`${import.meta.env.VITE_CORGI_URL}/admin/posts`, {withCredentials: true})
                 .then(res => {
                     posts.value = res.data
                 })
